@@ -6,6 +6,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 
 const app = express()
 const compiler = webpack(webpackConfig)
+
 app.use(webpackDevMiddleware(compiler, {
   publicPath: '/__build__/',
   colors: true
