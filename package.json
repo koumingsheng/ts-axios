@@ -115,6 +115,11 @@
     "tslint-config-prettier": "^1.15.0",
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.12.0",
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "webpack": "^5.82.0",
+    "webpack-dev-middleware": "^6.1.0",
+    "webpack-hot-middleware": "^2.25.3",
+    "express": "^4.18.2",
+    "body-parse": "^0.1.0"
   }
 }
