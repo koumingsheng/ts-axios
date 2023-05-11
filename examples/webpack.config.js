@@ -7,7 +7,7 @@ module.exports = {
 
   entry: fs.readdirSync(__dirname).reduce((entries, dir) => {
     const fullDir = path.join(__dirname, dir)
-    const entry = path.join(__dirname, 'app.ts')
+    const entry = path.join(fullDir, 'app.ts')
     if (fs.statSync(fullDir).isDirectory() && fs.existsSync(entry)) {
       entries[dir] = ['webpack-hot-middleware/client', entry]
     }
@@ -17,7 +17,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, '__build__'),
-    publicPath: '/__build__/'
+    // publicPath: '/__build__/'
   },
 
   module: {
@@ -36,7 +36,7 @@ module.exports = {
         use: [
           {
             loader: 'ts-loader',
-            option: {
+            options: {
               transpileOnly: true
             }
           }
@@ -54,6 +54,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ]
 }
