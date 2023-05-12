@@ -27,8 +27,12 @@ router.get('/simple/get', function (req, res) {
   })
 })
 
+router.get('/base/get', function (req, res) {
+  res.json(req.query)
+})
+
 app.use(router)
 
 module.exports = app.listen(8081, () => {
-  console.log('Server listening on http://localhost:8080')
+  console.log('Server listening on http://localhost:8081')
 })
